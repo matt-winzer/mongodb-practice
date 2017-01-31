@@ -17,7 +17,12 @@ app.listen(3000, () => {
   console.log('Listening on port 3000');
 });
 
-// app.get('/');
+app.get('/', (req, res, next) => {
+  clowns.find()
+    .then(response => {
+      res.json(response);
+    });
+});
 
 
 app.post('/', (req, res, next) => {
