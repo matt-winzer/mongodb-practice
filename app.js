@@ -18,10 +18,11 @@ app.listen(3000, () => {
 });
 
 // app.get('/');
-//
-// app.post('/', (req, res, next) => {
-//      clowns.insert(req.body)
-//       .then(response => {
-//         res.json(response);
-//       });
-// });
+
+
+app.post('/', (req, res, next) => {
+     clowns.insert(req.body)
+      .then(response => {
+        res.json(response);
+      });
+});
