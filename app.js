@@ -37,3 +37,10 @@ app.post('/', (req, res, next) => {
         res.json(response);
       });
 });
+
+app.delete('/:id', (req, res, next) => {
+  clowns.findOneAndDelete({_id: req.params.id})
+    .then(response => {
+      res.json(response);
+    });
+});
