@@ -44,3 +44,10 @@ app.delete('/:id', (req, res, next) => {
       res.json(response);
     });
 });
+
+app.patch('/:id', (req, res, next) => {
+  clowns.findOneAndUpdate({_id: req.params.id}, req.body)
+    .then(response => {
+      res.json(response);
+    });
+});
