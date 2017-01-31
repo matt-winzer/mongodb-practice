@@ -46,7 +46,7 @@ app.delete('/:id', (req, res, next) => {
 });
 
 app.patch('/:id', (req, res, next) => {
-  clowns.findOneAndUpdate({_id: req.params.id}, req.body)
+  clowns.findOneAndUpdate({_id: req.params.id}, {$set: req.body})
     .then(response => {
       res.json(response);
     });
