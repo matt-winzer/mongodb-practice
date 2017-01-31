@@ -24,6 +24,12 @@ app.get('/', (req, res, next) => {
     });
 });
 
+app.get('/:id', (req, res, next) => {
+  clowns.findOne({_id: req.params.id})
+    .then(response => {
+      res.json(response);
+    });
+});
 
 app.post('/', (req, res, next) => {
      clowns.insert(req.body)
